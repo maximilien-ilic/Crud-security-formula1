@@ -19,7 +19,7 @@ if(isset($_POST['user']) && !empty($_POST['user'])) {
 
 
 if(isset($_POST['mdp']) && !empty($_POST['mdp'])) {
-    $mdp = htmlspecialchars($_POST['mdp']);
+    $mdp = $_POST['mdp']; 
 } else{
     $erreurs[] = 'Le mot de passe est obligatoire';
 }
@@ -40,15 +40,16 @@ if(isset($hashedmdp) && isset($user)){
         die('Erreur : '. $e->getMessage());
     }
 
-    $verif_login = $pdo->prepare('SELECT * FROM utilisateur WHERE nom =:nom AND motdepasse =:motdepasse');
-    $verif_login->execute([
-        'nom'=> $user,
-        'motdepasse' => $hashedmdp,
-        ]);   
-        echo "$verif_login"; 
+    $verif_login = $pdo->prepare('SELECT nom,motdepasse FROM utilisateur WHERE nom =:nom');
+    $verif_login->execute(['nom'=> $user,]);   
+    $utilisateur = $verif_login->fetch(PDO::FETCH_ASSOC);
 
-    if ($verif_login->rowCount() > 0) {
-        echo "$verif_login"; 
-        // session_start()
+    if ($utilisateur && password_verify($mdp, $utilisateur['motdepasse'])) {
+    $_SESSION['nom'] = $utilisateur['nom'];
+
+        header('Location: formule1.php');
+        exit;
+    } else {
+        echo "<p>Nom d'utilisateur ou mot de passe incorrect.</p>";
     }
 }

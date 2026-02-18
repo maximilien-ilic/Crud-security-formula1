@@ -19,7 +19,7 @@ if(isset($_POST['user']) && !empty($_POST['user'])) {
 
 
 if(isset($_POST['mdp']) && !empty($_POST['mdp'])) {
-    $mdp = htmlspecialchars($_POST['mdp']);
+    $mdp = $_POST['mdp']; 
 } else{
     $erreurs[] = 'Le mot de passe est obligatoire';
 }

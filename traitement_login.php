@@ -40,16 +40,17 @@ if(isset($hashedmdp) && isset($user)){
         die('Erreur : '. $e->getMessage());
     }
 
-    $verif_login = $pdo->prepare('SELECT nom,motdepasse FROM utilisateur WHERE nom =:nom');
+    $verif_login = $pdo->prepare('SELECT nom,motdepasse,role FROM utilisateur WHERE nom =:nom');
     $verif_login->execute(['nom'=> $user,]);   
     $utilisateur = $verif_login->fetch(PDO::FETCH_ASSOC);
 
     if ($utilisateur && password_verify($mdp, $utilisateur['motdepasse'])) {
     $_SESSION['nom'] = $utilisateur['nom'];
-
+    $_SESSION['role'] = $utilisateur['role'];
         header('Location: formule1.php');
         exit;
     } else {
         echo "<p>Nom d'utilisateur ou mot de passe incorrect.</p>";
     }
 }
+

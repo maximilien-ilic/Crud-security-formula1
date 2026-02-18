@@ -1,6 +1,11 @@
 <?php include ("header.php");?>
 
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,5 +24,6 @@
         <br>
         <button type="submit">se connecter</button>
     </form>
+    <a href="register.php">Créer un compte</a>
 </body>
 </html>

@@ -19,5 +19,7 @@
         <br>
         <button type="submit">Ajouter</button>
     </form>
+    <a href="index.php">se connecter</a>
+
 </body>
 </html>

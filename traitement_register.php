@@ -45,4 +45,6 @@ if(isset($hashedmdp) && isset($user)){
         'motdepasse' => $hashedmdp,
      ]);
     echo '<p> utilisateur ajoute avec succes </p>';
+    header('Location: index.php');
+
 }

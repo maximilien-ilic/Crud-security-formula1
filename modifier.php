@@ -28,24 +28,29 @@ if (!$pilote) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>modifier</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="traitement_formule1.php" method="post">
-        <input type="hidden" name="token" value="<?= $_SESSION['token_article_add'];?>">
-        <input type="hidden" name="id" value="<?= $pilote['id'] ?>"> 
+    <div class="login-wrapper">
+        <div class="login-box">
+            <form action="traitement_formule1.php" method="post">
+                <input type="hidden" name="token" value="<?= $_SESSION['token_article_add'];?>">
+                <input type="hidden" name="id" value="<?= $pilote['id'] ?>"> 
 
-        <label for="nom">nom</label>
-        <input type="text" name="nom" value="<?= htmlspecialchars($pilote['nom']) ?>">
-        <label for="age">age</label>
-        <input type="number" name="age" value="<?= htmlspecialchars($pilote['age']) ?>">
-        <label for="ecurie">ecurie</label>
-        <input type="text" name="ecurie" value="<?= htmlspecialchars($pilote['écurie']) ?>">
-        <label for="podium">podium</label>
-        <input type="number" name="podium" value="<?= htmlspecialchars($pilote['podium']) ?>">
-        <label for="circuit">circuit favoris</label>
-        <input type="text" name="circuit" value="<?= htmlspecialchars($pilote['circuit_favoris']) ?>">    
-        <button type="submit" name="action" value="modifier">Modifier</button> 
-    </form>
+                <label for="nom">nom</label>
+                <input type="text" name="nom" value="<?= htmlspecialchars($pilote['nom']) ?>">
+                <label for="age">age</label>
+                <input type="number" name="age" value="<?= htmlspecialchars($pilote['age']) ?>">
+                <label for="ecurie">ecurie</label>
+                <input type="text" name="ecurie" value="<?= htmlspecialchars($pilote['écurie']) ?>">
+                <label for="podium">podium</label>
+                <input type="number" name="podium" value="<?= htmlspecialchars($pilote['podium']) ?>">
+                <label for="circuit">circuit favoris</label>
+                <input type="text" name="circuit" value="<?= htmlspecialchars($pilote['circuit_favoris']) ?>">    
+                <button type="submit" name="action" value="modifier">Modifier</button> 
+            </form>
+        </div>
+    </div>
     <a href="formule1.php">retour</a>
 </body>
 </html>

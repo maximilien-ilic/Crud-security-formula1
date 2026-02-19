@@ -26,13 +26,9 @@ if (!isset($_SESSION['nom'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formule1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php echo 'Bonjour ' .$_SESSION['nom']. '';?>
-    <?php echo 'Bonjour ' .$_SESSION['role']. '';?>
-    <form action="deconnexion.php" method="post">
-        <button type="submit">Se déconnecter</button>
-    </form>
     <table >
         <thead>
             <tr>
@@ -75,6 +71,9 @@ if (!isset($_SESSION['nom'])) {
     <?php if($_SESSION['nom'] == "admin") : ?>
         <a href="ajouter.php">ajouter Pilote</a>
     <?php endif; ?>
+    <form action="deconnexion.php" method="post">
+        <button type="submit">Se déconnecter</button>
+    </form>
 </body>
 </html>
 

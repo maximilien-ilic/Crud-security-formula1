@@ -46,5 +46,6 @@ if (!$pilote) {
         <input type="text" name="circuit" value="<?= htmlspecialchars($pilote['circuit_favoris']) ?>">    
         <button type="submit" name="action" value="modifier">Modifier</button> 
     </form>
+    <a href="formule1.php">retour</a>
 </body>
 </html>

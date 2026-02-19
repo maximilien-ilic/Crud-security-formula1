@@ -39,5 +39,6 @@ try {
         <input type="text" name="circuit" >    
         <button type="submit" name="action" value="ajouter">Ajouter</button> 
     </form>
+    <a href="formule1.php">retour</a>
 </body>
 </html>

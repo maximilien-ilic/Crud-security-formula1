@@ -50,7 +50,7 @@ if (!isset($_SESSION['nom'])) {
         <tbody>
             <?php foreach ($pilotes as $pilote): ?>
             <tr>
-                <td><?= htmlspecialchars($pilote['nom']) ?></td>
+                <td><a href="details.php?slug=<?= $pilote['slug'] ?>"><?= htmlspecialchars($pilote['nom']) ?></a></td>
                 <td><?= htmlspecialchars($pilote['age']) ?></td>
                 <td><?= htmlspecialchars($pilote['écurie']) ?></td>
                 <td><?= htmlspecialchars($pilote['podium']) ?></td>

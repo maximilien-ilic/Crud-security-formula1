@@ -73,7 +73,7 @@ if (!isset($_SESSION['nom'])) {
         </tbody>
     </table>
     <?php if($_SESSION['nom'] == "admin") : ?>
-        <button>ajouter pilote</button>
+        <a href="ajouter.php">ajouter Pilote</a>
     <?php endif; ?>
 </body>
 </html>

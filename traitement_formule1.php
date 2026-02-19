@@ -43,6 +43,21 @@ class pilote {
             'id'              => $id,
         ]);
     }
+
+    public function ajouter($pdo, $id, $data){
+        $ajouter = $pdo->prepare('INSERT INTO pilote (nom, age, écurie, podium, circuit_favoris, slug) VALUES (:nom, :age, :ecurie, :podium, :circuit_favoris, :slug)');
+        $ajouter->execute([
+            'nom'             => $data['nom'],
+            'age'             => $data['age'],
+            'ecurie'          => $data['ecurie'],
+            'podium'          => $data['podium'],
+            'circuit_favoris' => $data['circuit_favoris'],
+            'slug'            => slug($data['nom']),
+        ]);
+    }
+
+
+
 }
 
 if (isset($_POST['action']) && $_POST['action'] === 'modifier') {
@@ -67,5 +82,17 @@ if (isset($_POST['action']) && $_POST['action'] === 'supprimer') {
     exit;
 }
 
-
+if (isset($_POST['action']) && $_POST['action'] === 'ajouter') {
+    $data = [
+        'nom'             => $_POST['nom'],
+        'age'             => $_POST['age'],
+        'ecurie'          => $_POST['ecurie'],
+        'podium'          => $_POST['podium'],
+        'circuit_favoris' => $_POST['circuit'], 
+    ];
+    $pilote = new Pilote();
+    $pilote->ajouter($pdo, $_POST['id'],$data);
+    header('Location: formule1.php');
+    exit;
+}
 

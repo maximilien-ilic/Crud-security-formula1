@@ -15,3 +15,5 @@ Mini Formula 1 website with full CRUD functionality, built following best practi
 
 
 Maximilien Ilic
+
+(admin : mdp admin pour test CRUD admin)

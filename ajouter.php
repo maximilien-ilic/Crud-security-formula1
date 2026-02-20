@@ -20,7 +20,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>modifier</title>
+    <title>ajouter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -44,6 +44,6 @@ try {
             </form>
         </div>
     </div>
-    <a href="formule1.php">retour</a>
+    <a href="formule1.php" class="mid btn">retour</a>
 </body>
 </html>

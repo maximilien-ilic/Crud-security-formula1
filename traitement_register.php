@@ -5,6 +5,8 @@ session_start();
 if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token_article_add'])  {
 
     die('Erreur : token ivalide');
+    header('Location: register.php');
+
 }
 
 unset($_SESSION['token_article_add']);
@@ -20,13 +22,23 @@ if(isset($_POST['user']) && !empty($_POST['user'])) {
 
 if(isset($_POST['mdp']) && !empty($_POST['mdp'])) {
     $mdp = $_POST['mdp']; 
+    if(strlen($mdp) < 10) {
+        $erreurs[] = 'Le mot de passe doit faire au moins 10 caractères';
+    }
+    if(!preg_match('/[0-9]/', $mdp)) {
+        $erreurs[] = 'Le mot de passe doit contenir au moins un chiffre';
+    }
+    if(!preg_match('/[!@#$%^&*()_+\-=\[\]{};\':"\\|,.<>\/?]/', $mdp)) {
+        $erreurs[] = 'Le mot de passe doit contenir au moins un symbole';
+    }
 } else{
     $erreurs[] = 'Le mot de passe est obligatoire';
 }
 
 
 if(!empty($erreurs)) {
-    foreach($erreurs as $e) echo "<p>$e</p>";
+    $_SESSION['erreurs'] = $erreurs;
+    header('Location: register.php');
     exit;
 }
 

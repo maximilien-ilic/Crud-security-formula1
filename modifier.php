@@ -46,11 +46,12 @@ if (!$pilote) {
                 <label for="podium">podium</label>
                 <input type="number" name="podium" value="<?= htmlspecialchars($pilote['podium']) ?>">
                 <label for="circuit">circuit favoris</label>
-                <input type="text" name="circuit" value="<?= htmlspecialchars($pilote['circuit_favoris']) ?>">    
+                <input type="text" name="circuit" value="<?= htmlspecialchars($pilote['circuit_favoris']) ?>">  
+  
                 <button type="submit" name="action" value="modifier">Modifier</button> 
             </form>
         </div>
     </div>
-    <a href="formule1.php">retour</a>
+    <a href="formule1.php" class="btn mid">retour</a>
 </body>
 </html>

@@ -5,6 +5,7 @@ session_start();
 if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token_article_add'])  {
 
     die('Erreur : token ivalide');
+    header('Location: index.php');
 }
 
 unset($_SESSION['token_article_add']);
@@ -26,7 +27,8 @@ if(isset($_POST['mdp']) && !empty($_POST['mdp'])) {
 
 
 if(!empty($erreurs)) {
-    foreach($erreurs as $e) echo "<p>$e</p>";
+    $_SESSION['erreurs'] = $erreurs;
+    header('Location: index.php');
     exit;
 }
 
@@ -50,7 +52,9 @@ if(isset($hashedmdp) && isset($user)){
         header('Location: formule1.php');
         exit;
     } else {
-        echo "<p>Nom d'utilisateur ou mot de passe incorrect.</p>";
+        $erreurs[] = 'Nom d"utilisateur ou mot de passe incorrect.';
+        $_SESSION['erreurs'] = $erreurs;
+        header('Location: index.php');
     }
 }
 

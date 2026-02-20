@@ -5,6 +5,7 @@ session_start();
 if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token_article_add'])  {
 
     die('Erreur : token ivalide');
+    header('Location: formule1.php');
 }
 
 unset($_SESSION['token_article_add']);

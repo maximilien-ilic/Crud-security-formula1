@@ -22,22 +22,44 @@ if (!$pilote) {
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>details</title>
+    <title><?= htmlspecialchars($pilote['nom']) ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p><?= htmlspecialchars($pilote['nom']) ?></p>
-    <p><?= htmlspecialchars($pilote['age']) ?></p>
-    <p><?= htmlspecialchars($pilote['écurie']) ?></p>
-    <p><?= htmlspecialchars($pilote['podium']) ?></p>
-    <p><?= htmlspecialchars($pilote['circuit_favoris']) ?></p>
-    <a href="formule1.php">retour</a>
+
+    <div class="details-wrapper">
+
+
+        <h1 class="details-nom"><?= htmlspecialchars($pilote['nom']) ?></h1>
+        <div class="details-line"></div>
+
+        <div class="details-grid">
+            <div class="details-card">
+                <span class="details-label">Âge</span>
+                <span class="details-value"><?= htmlspecialchars($pilote['age']) ?></span>
+            </div>
+            <div class="details-card">
+                <span class="details-label">Écurie</span>
+                <span class="details-value"><?= htmlspecialchars($pilote['écurie']) ?></span>
+            </div>
+            <div class="details-card">
+                <span class="details-label">Podiums</span>
+                <span class="details-value"><?= htmlspecialchars($pilote['podium']) ?></span>
+            </div>
+            <div class="details-card">
+                <span class="details-label">Circuit favori</span>
+                <span class="details-value"><?= htmlspecialchars($pilote['circuit_favoris']) ?></span>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="formule1.php" class=" btn margin">Retour</a>
+
 </body>
 </html>

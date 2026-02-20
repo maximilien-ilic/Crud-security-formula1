@@ -12,6 +12,14 @@
 <body>
     <div class="login-wrapper">
         <div class="login-box">
+            <?php if(!empty($_SESSION['erreurs'])): ?>
+                <div class="erreurs">
+                    <?php foreach($_SESSION['erreurs'] as $e): ?>
+                        <p class="erreur"><?= $e ?></p>
+                    <?php endforeach; ?>
+                </div>
+                <?php unset($_SESSION['erreurs']); ?>
+            <?php endif; ?>
             <form action="traitement_register.php" method="post" >
                 <input type="hidden" name="token" value="<?= $_SESSION['token_article_add'];?>">
                 <label for="user">Nom utilisateur</label>
@@ -24,6 +32,6 @@
             </form>
         </div>
     </div>
-    <a href="index.php">se connecter</a>
+    <a href="index.php" class="btn mid">se connecter</a>
 </body>
 </html>

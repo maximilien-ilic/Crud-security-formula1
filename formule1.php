@@ -68,12 +68,14 @@ if (!isset($_SESSION['nom'])) {
 
         </tbody>
     </table>
-    <?php if($_SESSION['nom'] == "admin") : ?>
-        <a href="ajouter.php">ajouter Pilote</a>
-    <?php endif; ?>
-    <form action="deconnexion.php" method="post">
-        <button type="submit">Se déconnecter</button>
-    </form>
+    <div class="flex">
+        <?php if($_SESSION['nom'] == "admin") : ?>
+            <a href="ajouter.php" class="btn-deco" >ajouter Pilote</a>
+        <?php endif; ?>
+        <form action="deconnexion.php" method="post">
+            <button type="submit" >Se déconnecter</button>
+        </form>
+    </div>
 </body>
 </html>
 

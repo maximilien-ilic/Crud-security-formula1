@@ -1,14 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Rajdhani:wght@400;500;700&family=Share+Tech+Mono&display=swap');
 
-/* ── Reset ── */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ── Body ── */
 body {
     background-color: #111214;
     color: #f0f0f0;
@@ -24,7 +22,7 @@ body {
             rgba(255,255,255,0.01) 2px,
             rgba(255,255,255,0.01) 4px
         ),
-        radial-gradient(ellipse at 20% 50%, rgba(232,0,29,0.04) 0%, transparent 60%);
+        radial-gradient( rgba(232,0,29,0.04) 0%, transparent 60%);
 }
 
 ::-webkit-scrollbar { width: 6px; }
@@ -193,7 +191,7 @@ tbody tr:hover {
 
 tbody tr:nth-child(even) {
     background: rgba(255,255,255,0.015);
-}
+}   
 
 tbody td {
     padding: 0.9rem 1.2rem;
@@ -270,7 +268,6 @@ input::placeholder {
     color: #eaedf2;
 }
 
-/* ── Boutons ── */
 button {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
@@ -322,7 +319,6 @@ button[value="modifier"]:hover {
     color: #0a0a0a;
 }
 
-/* ── Erreurs ── */
 .erreur {
     color: #e8001d;
     font-family: 'Share Tech Mono', monospace;
@@ -333,9 +329,8 @@ button[value="modifier"]:hover {
     margin: 0.5rem 0;
 }
 
-/* ── Login box ── */
 .login-wrapper {
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -360,8 +355,122 @@ button[value="modifier"]:hover {
     background: linear-gradient(90deg, #e8001d, #ff6b00);
 }
 
-/* ── Animation ── */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.8rem;
+    background: #e8001d;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background: #a30015;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(232,0,29,0.4);
+}
+
+
+.mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.btn-deco {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.8rem;
+    background: #e8001d;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}    
+
+.details-wrapper {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.details-nom {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.details-line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #e8001d, #ff6b00, transparent);
+    margin-bottom: 3rem;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.details-card {
+    background: #1a1c1f;
+    border: 1px solid #2a2d32;
+    border-left: 3px solid #e8001d;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.details-card:hover {
+    transform: translateX(4px);
+    box-shadow: -4px 0 20px rgba(232,0,29,0.15);
+}
+
+.details-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #4a4f57;
+}
+
+.details-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.margin{
+    margin-left: 47%;
 }
